@@ -1,9 +1,17 @@
-cmd_restore() {
-    file=$1
-    test -f "$file" || fail "Usage: $COMMAND file.tgz"
+cmd_restore_help() {
+    cat <<_EOF
+    restore <backup-file.tgz>
+        Restore data from the given backup file.
 
-    dir=${file%%.tgz}
-    [[ $file != $dir ]] || fail "Usage: $COMMAND file.tgz"
+_EOF
+}
+
+cmd_restore() {
+    local file=$1
+    test -f "$file" || fail "Usage: $COMMAND <backup-file.tgz>"
+
+    local dir=${file%%.tgz}
+    [[ $file != $dir ]] || fail "Usage: $COMMAND <backup-file.tgz>"
 
     tar xfz $file
 

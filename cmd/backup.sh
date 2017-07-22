@@ -1,6 +1,14 @@
+cmd_backup_help() {
+    cat <<_EOF
+    backup
+        Make a data backup of the container '$CONTAINER'.
+
+_EOF
+}
+
 cmd_backup() {
-    datestamp=$(date +%F)
-    dir=backup-$CONTAINER-$datestamp
+    local datestamp=$(date +%F)
+    local dir=backup-$CONTAINER-$datestamp
     rm -rf $dir/
     mkdir -p $dir/data
 
