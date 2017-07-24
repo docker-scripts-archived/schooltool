@@ -3,7 +3,7 @@ schooltool
 
 Docker scripts that install and run SchoolTool in a container.
 
-## Installation
+## Install
 
   - First install `ds` and `wsproxy`:
      + https://github.com/docker-scripts/ds#installation
