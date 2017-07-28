@@ -1,4 +1,4 @@
-SRC='/usr/local/src/schooltool'
+APP=schooltool
 
 ### docker image and container
 IMAGE=schooltool

@@ -9,20 +9,13 @@ Docker scripts that install and run SchoolTool in a container.
      + https://github.com/docker-scripts/ds#installation
      + https://github.com/docker-scripts/wsproxy#installation
 
-  - Then get the schooltool scripts from github:
-    ```
-    git clone https://github.com/docker-scripts/schooltool /usr/local/src/schooltool
-    ```
+  - Then get the schooltool scripts from github: `ds pull schooltool`
 
-  - Create a working directory for the schooltool container:
-    ```
-    mkdir -p /var/containers/school1
-    cd /var/containers/school1/
-    ```
+  - Create a directory for the schooltool container: `ds init schooltool @school1`
 
-  - Initialize and fix the settings:
+  - Fix the settings:
     ```
-    ds init /usr/local/src/schooltool
+    cd /var/ds/school1
     vim settings.sh
     ds info
     ```
@@ -39,7 +32,7 @@ Docker scripts that install and run SchoolTool in a container.
 
   - Tell `wsproxy` that the domain `school1.example.org` is served by the container `school1-example-org`:
     ```
-    cd /var/container/wsproxy/
+    cd /var/ds/wsproxy/
     ds domains-add school1-example-org school1.example.org
     ```
 
