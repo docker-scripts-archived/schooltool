@@ -30,16 +30,12 @@ Docker scripts that install and run SchoolTool in a container.
 
 ## Access the website
 
-  - Tell `wsproxy` that the domain `school1.example.org` is served by the container `school1-example-org`:
-    ```
-    cd /var/ds/wsproxy/
-    ds domains-add school1-example-org school1.example.org
-    ```
+  - Tell `wsproxy` to manage the domain of this container: `ds wsproxy add`
 
- - If the domain is a real one, get a free SSL certificate from letsencrypt.org:
+  - Tell `wsproxy` to get a free letsencrypt.org SSL certificate for this domain (if it is a real one):
     ```
-    ds get-ssl-cert user@example.org school1.example.org --test
-    ds get-ssl-cert user@example.org school1.example.org
+    ds wsproxy ssl-cert --test
+    ds wsproxy ssl-cert
     ```
 
  - If the domain is not a real one, add to `/etc/hosts` the line
@@ -54,6 +50,7 @@ ds shell
 ds stop
 ds start
 ds snapshot
+
 ds backup
 ds restore
 
