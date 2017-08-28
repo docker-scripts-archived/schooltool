@@ -8,7 +8,6 @@ _EOF
 
 cmd_config() {
     ds runcfg set_prompt
-    ds runcfg mount_tmp_on_ram
     ds runcfg ssmtp
 
     ds runcfg schooltool
