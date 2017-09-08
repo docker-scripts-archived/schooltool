@@ -24,6 +24,8 @@ cat <<EOF > /etc/apache2/sites-available/schooltool.conf
     #SSLCertificateChainFile /etc/ssl/certs/ssl-cert-snakeoil.pem
 </VirtualHost>
 EOF
+### we need to refer to this apache2 config by the name "$DOMAIN.conf" as well
+ln /etc/apache2/sites-available/{schooltool,$DOMAIN}.conf
 
 ### update config and restart apache2
 a2enmod ssl proxy proxy_http rewrite
