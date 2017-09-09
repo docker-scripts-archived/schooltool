@@ -19,9 +19,9 @@ cat <<EOF > /etc/apache2/sites-available/schooltool.conf
 
     SSLEngine on
     SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
-    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-    #SSLCertificateChainFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateFile        /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateKeyFile   /etc/ssl/private/ssl-cert-snakeoil.key
+    #SSLCertificateChainFile  /etc/ssl/certs/ssl-cert-snakeoil.pem
 </VirtualHost>
 EOF
 ### we need to refer to this apache2 config by the name "$DOMAIN.conf" as well
