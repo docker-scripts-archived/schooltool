@@ -7,9 +7,9 @@ _EOF
 }
 
 cmd_config() {
-    ds runcfg set_prompt
-    ds runcfg ssmtp
+    ds inject set_prompt.sh
+    ds inject ssmtp.sh
 
-    ds runcfg schooltool
-    ds runcfg apache2
+    ds inject schooltool.sh
+    ds inject apache2.sh
 }
