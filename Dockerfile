@@ -45,6 +45,7 @@ RUN /usr/sbin/update-rc.d -f ondemand remove; \
 
 ENV container docker
 CMD ["/sbin/init"]
+STOPSIGNAL SIGRTMIN+3
 ### End ubuntu-upstart
 
 ### Update and upgrade and install some other packages.
